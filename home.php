@@ -31,7 +31,7 @@
     <div class="container">
         <h1 class="display-4">Bem-vindo ao Sistema de Gestão de Eventos</h1>
         <p class="lead">Gerencie seus eventos de forma simples e rápida com nosso sistema.</p>
-        <a href="index.php" class="btn btn-light btn-lg mt-3">Ver Eventos</a>
+        <a href="listagem.php" class="btn btn-light btn-lg mt-3">Ver Eventos</a>
     </div>
 </section>
 
@@ -62,7 +62,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Editar ou Excluir</h5>
                         <p class="card-text">Atualize ou remova eventos conforme necessário.</p>
-                        <a href="index.php" class="btn btn-primary">Gerenciar</a>
+                        <a href="editar.php" class="btn btn-primary">Gerenciar</a>
                     </div>
                 </div>
             </div>
