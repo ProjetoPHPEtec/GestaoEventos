@@ -22,6 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Sair</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Login
+                </li>
             </ul>
         </div>
     </div>
@@ -53,7 +56,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Listar Eventos</h5>
                         <p class="card-text">Veja todos os eventos cadastrados, ordenados pela data.</p>
-                        <a href="index.php" class="btn btn-primary">Listar</a>
+                        <a href="listagem.php" class="btn btn-primary">Listar</a>
                     </div>
                 </div>
             </div>
