@@ -1,15 +1,32 @@
 <?php
-$servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "meu_banco";
+$dsn = "mysql:host=127.0.0.1;dbname=gestao_de_eventos;charset=utf8mb4";
+$username = "root";
+$password = "";
+$pdo = new PDO($dsn, $username, $password);
 
+$conexao = new PDO($dsn , $username, $password);
 
-$conn = mysqli_connect($servidor, $usuario, $senha, $banco);
-
-
-if (!$conn) {
-    die("Falha na conexão: " . mysqli_connect_error());
+try {
+    $conexao = new PDO($dsn, $username, $password);
+} catch (Exeception $e) {
+    echo "Erro de conexão";
 }
-echo "Conectado com sucesso!";
+
+$login = $_POST['login'];
+$email = $_POST['email'];   
+$senha = $_POST['senha'];
+if (isset($login) && isset($email) && isset($senha)) {
+    $stmt = $conexao->prepare("INSERT INTO usuarios (login, email, senha) VALUES (:login, :email, :senha)");
+    $stmt->bindParam(':login', $login);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha',($senha));
+    
+    if ($stmt->execute()) {
+        echo "Usuário cadastrado com sucesso!";
+    } else {
+        echo "Erro ao cadastrar usuário.";
+    }
+} else {
+    echo "Preencha todos os campos.";
+}
 ?>
