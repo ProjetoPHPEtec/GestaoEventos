@@ -34,9 +34,10 @@
             <a href="listagem.php" class="btn btn-light btn-lg mt-3"></a>
         </div>
     </section>
+    
     <div class="container-md">
-    <h1>Adicionar Evento</h1>
-    <form method="post">
+        <h1>Adicionar Evento</h1>
+    <form method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label>Nome</label>
             <input type="text" name="nome" class="form-control" required>
@@ -54,9 +55,8 @@
             <input type="time" name="horario_evento" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label>Coloque a foto sobre seu evento:</label>
-            <input type="file" name="image" /></br>
-            <input type="submit" value="Enviar" name="envia" />
+            <label for="image" class="form-label">Foto do Evento</label>
+    <input type="file" name="image" id="image" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-success">Salvar</button>
         <a href="listagem.php" class="btn btn-secondary">Voltar</a>
