@@ -2,7 +2,7 @@
 
 $dsn = 'mysql: dbname=GestaoEventos; host=localhost';
 $user = 'root';
-$pasword = 'root';
+$password = 'root';
 
 $conexao = new PDO($dsn, $user, $password);
 
@@ -11,5 +11,7 @@ try {
 } catch (Exeception $e) {
     echo "Erro de conexão";
 }
+
+
 
 ?>

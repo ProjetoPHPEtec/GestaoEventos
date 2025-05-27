@@ -43,8 +43,11 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Evento 1</h5>
-                        <p class="card-text">Cadastre novos eventos com facilidade, inserindo nome e data.</p>
-                        <a href="add.php" class="btn btn-primary">Adicionar</a>
+                        <p class="card-text">Nome</p>
+                        <p class="card-text">Data</p>
+                        <p class="card-text">Local</p>
+                        <p class="card-text">Hora</p>
+                        <a href="add.php" class="btn btn-primary">Editar</a>
                     </div>
                 </div>
             </div>
