@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Gestão de Eventos</a>
+            <a class="navbar-brand" href="home.php">Gestão de Eventos</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -31,10 +28,10 @@
     <section class="py-5 text-center text-white" style="background: linear-gradient(135deg,rgb(66, 96, 193), #6610f2);">
         <div class="container">
             <h1 class="display-4"> Sistema de Gestão de Eventos</h1>
-            <a href="listagem.php" class="btn btn-light btn-lg mt-3"></a>
+            <a href="home.php" class="btn btn-light btn-lg mt-3">Voltar</a>
         </div>
     </section>
-    
+
     <div class="container-md">
         <h1>Adicionar Evento</h1>
     <form method="post" enctype="multipart/form-data">

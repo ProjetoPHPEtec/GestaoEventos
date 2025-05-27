@@ -47,7 +47,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Adicionar Eventos</h5>
                         <p class="card-text">Cadastre novos eventos com facilidade, inserindo nome e data.</p>
-                        <a href="add.php" class="btn btn-primary">Adicionar</a>
+                        <a href="adicionarevento.php" class="btn btn-primary">Adicionar</a>
                     </div>
                 </div>
             </div>

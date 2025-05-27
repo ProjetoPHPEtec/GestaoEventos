@@ -1,5 +1,12 @@
 <?php
 
+include 'db.php';
+
+$sql = "SELECT * FROM eventos ORDER BY data_evento ASC";
+$stmt = $conexao->prepare($sql);
+$stmt->execute();
+$eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +20,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="#">Gestão de Eventos</a>
+        <a class="navbar-brand" href="home.php">Gestão de Eventos</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -27,32 +34,47 @@
     </div>
 </nav>
 
-<!-- <section class="py-5 text-center text-white" style="background: linear-gradient(135deg,rgb(66, 96, 193), #6610f2);">
+<section class="py-5 text-center text-white" style="background: linear-gradient(135deg,rgb(66, 96, 193), #6610f2);">
     <div class="container">
-        <h1 class="display-4">Bem-vindo ao Sistema de Gestão de Eventos</h1>
+        <h1 class="display-4">Listagem dos seus eventos</h1>
         <p class="lead">Gerencie seus eventos de forma simples e rápida com nosso sistema.</p>
-        <a href="index.php" class="btn btn-light btn-lg mt-3">Voltar</a>
+        <a href="home.php" class="btn btn-light btn-lg mt-3">Voltar</a>
     </div>
-</section> -->
+</section>
 
 <section class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Listagem de eventos</h2>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Evento 1</h5>
-                        <p class="card-text">Nome</p>
-                        <p class="card-text">Data</p>
-                        <p class="card-text">Local</p>
-                        <p class="card-text">Hora</p>
-                        <a href="add.php" class="btn btn-primary">Editar</a>
+            <?php foreach ($eventos as $evento): ?>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow rounded">
+                        <?php if (!empty($evento['imagem']) && file_exists($evento['imagem'])): ?>
+                            <img src="<?= htmlspecialchars($evento['imagem']) ?>" 
+                                 class="card-img-top" 
+                                 alt="Imagem do Evento"
+                                 style="height: 220px; object-fit: cover; border-top-left-radius: 0.375rem; border-top-right-radius: 0.375rem;">
+                        <?php else: ?>
+                            <img src="https://via.placeholder.com/400x220?text=Sem+Imagem" 
+                                 class="card-img-top" 
+                                 alt="Sem imagem do evento"
+                                 style="height: 220px; object-fit: cover; border-top-left-radius: 0.375rem; border-top-right-radius: 0.375rem;">
+                        <?php endif; ?>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-3"><?= htmlspecialchars($evento['nome']) ?></h5>
+                            <p class="card-text mb-1"><strong>Data:</strong> <?= date('d/m/Y', strtotime($evento['data_evento'])) ?></p>
+                            <p class="card-text mb-1"><strong>Local:</strong> <?= htmlspecialchars($evento['local_evento']) ?></p>
+                            <p class="card-text mb-3"><strong>Horário:</strong> <?= substr($evento['horario_evento'], 0, 5) ?></p>
+                            <a href="editar.php?id=<?= $evento['id'] ?>" class="btn btn-primary mt-auto align-self-start">
+                                Editar
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
+
 
 <footer class="py-4 bg-light text-center">
     <div class="container">
