@@ -1,16 +1,5 @@
 <?php
-$dsn = "mysql:host=127.0.0.1;dbname=gestao_de_eventos;charset=utf8mb4";
-$username = "root";
-$password = "";
-$pdo = new PDO($dsn, $username, $password);
-
-$conexao = new PDO($dsn , $username, $password);
-
-try {
-    $conexao = new PDO($dsn, $username, $password);
-} catch (Exeception $e) {
-    echo "Erro de conexão";
-}
+include 'db.php';
 
 $login = $_POST['login'];
 $email = $_POST['email'];   
