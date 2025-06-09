@@ -24,10 +24,7 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Eventos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Sair</a>
+                    <a class="nav-link" href="login.php">Sair</a>
                 </li>
             </ul>
         </div>

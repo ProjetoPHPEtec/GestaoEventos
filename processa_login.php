@@ -1,12 +1,11 @@
 <?php
 session_start();
-include 'conexao.php'; // Arquivo que faz a conexão com o banco de dados
+include 'conexao.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $senha = trim($_POST['senha']);
 
-    // Consulta SQL para verificar usuário
     $sql = "SELECT id, senha FROM usuarios WHERE email = :email";
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(":email", $email, PDO::PARAM_STR);
@@ -14,10 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($usuario) {
-        // Verifica se a senha está correta
        if ($senha === $usuario['senha']) {
          $_SESSION['usuario'] = $usuario['id'];
-            header("Location: home.php"); // Redireciona para a página de acesso
+            header("Location: home.php"); 
             exit();
         } else {
             echo "<script>alert('Senha incorreta!'); window.location.href='login.php';</script>";
