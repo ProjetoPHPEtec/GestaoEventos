@@ -57,8 +57,8 @@
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">Editar ou Excluir</h5>
-                        <p class="card-text">Atualize ou remova eventos conforme necessário.</p>
+                        <h5 class="card-title">Editar</h5>
+                        <p class="card-text">Atualize seu eventos conforme necessário.</p>
                         <a href="editar.php" class="btn btn-primary">Gerenciar</a>
                     </div>
                 </div>
@@ -66,10 +66,9 @@
         </div>
     </div>
 </section>
-
-<footer class="py-4 bg-light text-center">
-    <div class="container">
-        <p class="mb-0">&copy; <?= date('Y') ?> Gestão de Eventos. Todos os direitos reservados.</p>
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p class="mb-0">© 2025 Gestão de Eventos. Todos os direitos reservados.</p>
     </div>
 </footer>
 </body>

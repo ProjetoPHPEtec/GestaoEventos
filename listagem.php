@@ -73,9 +73,9 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 
-<footer class="py-4 bg-light text-center">
-    <div class="container">
-        <p class="mb-0">&copy; <?= date('Y') ?> Gestão de Eventos. Todos os direitos reservados.</p>
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p class="mb-0">© 2025 Gestão de Eventos. Todos os direitos reservados.</p>
     </div>
 </footer>
 </body>

@@ -2,13 +2,18 @@
 include 'db.php';
 $nome = $_POST['nome'];
 $data = $_POST['data'];
-$query_editar =$conexao->prepare("UPDATE eventos Set nome = :nome, data_evento = :data");
+$id = $_POST['id']; 
+
+$query_editar = $conexao->prepare("UPDATE eventos SET nome = :nome, data_evento = :data WHERE id = :id");
 $query_editar->bindParam(':nome', $nome);
 $query_editar->bindParam(':data', $data);
-if($query_editar->execute()
-){ echo "Seu Evento foi Atualizado com Sucesso!";
-}else {
-     echo "Não foi possível atualizar o evento.";
-}
+$query_editar->bindParam(':id', $id);
 
+if ($query_editar->execute()) {
+    echo "Seu Evento foi Atualizado com Sucesso!";
+    header("Location: listagem.php");
+    exit();
+} else {
+    echo "Não foi possível atualizar o evento.";
+}
 ?>

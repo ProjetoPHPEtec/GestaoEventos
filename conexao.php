@@ -12,6 +12,8 @@ if (isset($login) && isset($email) && isset($senha)) {
     
     if ($stmt->execute()) {
         echo "Usuário cadastrado com sucesso!";
+        header("Location: login.php");
+        exit();
     } else {
         echo "Erro ao cadastrar usuário.";
     }

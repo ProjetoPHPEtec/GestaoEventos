@@ -20,7 +20,7 @@
                 <label class="form-label">Senha</label>
                 <input type="password" name="senha" class="form-control" placeholder="Digite sua senha" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+            <button href= "login.php"type="submit" class="btn btn-primary w-100">Cadastrar</button>
         </form>
     </div>
 </div>
